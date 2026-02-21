@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import { Building2, Search, TrendingUp, ChevronRight, BarChart3, Code2, Play, CheckCircle2, AlertCircle, Loader2, ArrowLeft, Star, Users, ExternalLink, X, Terminal, ArrowRight } from 'lucide-react';
 import { cn } from '../lib/utils';
 import api from '../services/api';
