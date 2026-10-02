@@ -15,8 +15,7 @@ const ForgotPassword = () => {
     setMessage('');
     setLoading(true);
     try {
-      
-      await api.post('/auth/forgot-password', { email });
+      await api.post('/auth/forgot-password', { email: email.trim().toLowerCase() });
       setMessage('If an account exists, a reset link has been sent to your email.');
     } catch (err) {
       console.error("Forgot Password Error:", err);

@@ -13,14 +13,13 @@ const sendEmail = async (options) => {
 
     
     const mailOptions = {
-        from: `${process.env.FROM_NAME} <${process.env.FROM_EMAIL}>`,
+        from: `${process.env.FROM_NAME || 'Placement Track'} <${process.env.FROM_EMAIL || process.env.SMTP_EMAIL}>`,
         to: options.email,
         subject: options.subject,
         text: options.message,
-        
+        html: options.html,
     };
 
-    
     await transporter.sendMail(mailOptions);
 };
 
