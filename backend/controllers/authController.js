@@ -130,11 +130,22 @@ const forgotPassword = asyncHandler(async (req, res) => {
       </style>
     </head>
     <body style="margin: 0; padding: 0; background-color: #000000; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif; color: #ffffff;">
+      <!-- Hidden Preheader text for clean email preview snippet in Gmail -->
+      <div style="display: none; max-height: 0px; overflow: hidden; opacity: 0; font-size: 1px; line-height: 1px; color: #000000;">
+        Reset your password for your Placement Tracker account.
+      </div>
       <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#000000" style="background-color: #000000; width: 100%; padding: 40px 15px;">
         <tr>
           <td align="center" bgcolor="#000000" style="background-color: #000000;">
             <table role="presentation" width="100%" cellspacing="0" cellpadding="0" border="0" bgcolor="#0a0a0a" style="max-width: 540px; background-color: #0a0a0a; border: 1px solid #1f2937; border-radius: 12px; padding: 36px 28px; text-align: left;">
               
+              <!-- Brand Header -->
+              <tr>
+                <td align="center" style="padding-bottom: 8px;">
+                  <span style="color: #a855f7; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.5px;">Placement Tracker</span>
+                </td>
+              </tr>
+
               <!-- Title -->
               <tr>
                 <td align="center" style="padding-bottom: 26px;">
@@ -214,7 +225,7 @@ const forgotPassword = asyncHandler(async (req, res) => {
     try {
         await sendEmail({
             email: user.email,
-            subject: 'Reset Your Password',
+            subject: 'Placement Tracker - Reset Your Password',
             message,
             html,
         });
